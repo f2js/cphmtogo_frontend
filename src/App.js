@@ -1,5 +1,16 @@
+
+import { BrowserRouter as Router, Routes,
+    Route } from "react-router-dom";
+
 import './styles/App.css';
-import Menu from "./components/Menu"
+import Menu from "./pages/Menu"
+import UserPage from "./pages/UserPage"
+import CustomButton from "./components/CustomButton"
+
+
+function Home() {
+    return <div>Homepage</div>
+}
 
 function App() {
   return (
@@ -8,12 +19,21 @@ function App() {
           CPHMTOGO
       </header>
 
-      <p>
-        Edit <code>src/App.js</code> and save to reload.
-      </p>
-      <button id="sel-button">Click me!</button>
 
-        <Menu/>
+      <button id="sel-button">Click me!</button>
+        <Router>
+            <CustomButton id={"homePage"} to="" />
+            <CustomButton id={"menuPage"} to="menu" />
+            <CustomButton id={"userPage"} to="user" />
+            <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/menu"
+                       element={<Menu />} />
+                <Route path="/user"
+                       element={<UserPage />} />
+            </Routes>
+        </Router>
+
 
     </div>
   );
