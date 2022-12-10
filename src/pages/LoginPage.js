@@ -20,11 +20,6 @@ export default function LoginPage() {
 		await performLogin()
 
 	};
-	useEffect(() => {
-		performLogin()
-			.catch(console.error);
-		;
-	}, [])
 
 	return (
 		<div id="loginContainer">
