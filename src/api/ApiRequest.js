@@ -18,8 +18,10 @@ export async function apiGet(url) {
 }
 
 export async function apiPost(data, url) {
+	console.log(Paths.apiBaseUrl + url)
 	try {
 		return await fetch(Paths.apiBaseUrl + url, {
+
 			method: "POST",
 			headers: {
 				Accept: "application/json",

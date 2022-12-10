@@ -1,7 +1,7 @@
 import {getMenu} from "../api/Menu"
 import {useEffect, useState} from "react"
 
-export default function Menu() {
+export default function MenuPage() {
 	const [menu, setMenu] = useState([])
 	const [showMenu, setShowMenu] = useState(false)
 	const resId = "637badd31208c351be7a46d0"

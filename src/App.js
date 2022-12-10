@@ -3,9 +3,9 @@ import { BrowserRouter as Router, Routes,
     Route } from "react-router-dom";
 
 import './styles/App.css';
-import Menu from "./pages/Menu"
-import UserPage from "./pages/UserPage"
-import CustomButton from "./components/CustomButton"
+import MenuPage from "./pages/MenuPage.js"
+import UserPage from "./pages/UserPage.js"
+import CustomButton from "./components/CustomButton.js"
 
 
 function Home() {
@@ -28,7 +28,7 @@ function App() {
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/menu"
-                       element={<Menu />} />
+                       element={<MenuPage />} />
                 <Route path="/user"
                        element={<UserPage />} />
             </Routes>
