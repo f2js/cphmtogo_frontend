@@ -3,7 +3,9 @@ import { apiPost } from "./ApiRequest";
 export async function login(username, password) {
   if (!username || !password) return false;
   try {
-    await apiPost({ username, password }, "users/login");
+    let res = await apiPost({ username, password }, "users/login");
+    res = await res.json();
+    if (res.message !== "Login successful") return false;
     const user = {username: username,password:password}
     localStorage.setItem("user", JSON.stringify(user))
     return true;
@@ -23,7 +25,8 @@ export async function signUp( name, lastname, username, email, password ) {
 
   let res = await apiPost(data, "users/signup");
   res = await res.json();
-  return res.user.user;
+  if(res.message !== "'User created'") return false
+  return res;
 }
 
 export async function logOut() {
