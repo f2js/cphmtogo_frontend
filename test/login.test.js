@@ -12,8 +12,8 @@ describe('LoginPage', function() {
 	it('login successfully with correct credentials', async function() {
 		await driver.get('http://localhost:3000/user');
 
-		await driver.findElement(By.id('username')).sendKeys('testuser');
-		await driver.findElement(By.id('password')).sendKeys('testpassword');
+		await driver.findElement(By.id('login-username')).sendKeys('testuser');
+		await driver.findElement(By.id('login-password')).sendKeys('testpassword');
 
 		await driver.findElement(By.id('login-submit-button')).click();
 

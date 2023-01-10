@@ -28,17 +28,17 @@ export default function LoginPage() {
 		<div style={styles.container}>
 
 			<form onSubmit={handleSubmit} style={styles.form}>
-				<label htmlFor="username">Username:</label>
+				<label htmlFor="login-username">Username:</label>
 				<input
 					type="text"
-					id="username"
+					id="login-username"
 					value={user.username}
 					onChange={(e) => setUser({...user, username: e.target.value})}
 				/>
-				<label htmlFor="password">Password:</label>
+				<label htmlFor="login-password">Password:</label>
 				<input
 					type="password"
-					id="password"
+					id="login-password"
 					value={user.password}
 					onChange={(e) => setUser({...user, password: e.target.value})}
 				/>

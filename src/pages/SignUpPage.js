@@ -16,8 +16,8 @@ export default function SignUpPage() {
 			formErrors.lastName = 'Please enter your last name.';
 		}
 
-		if (!userValues.userValuesname) {
-			formErrors.userValuesname = 'Please enter a userValuesname.';
+		if (!userValues.username) {
+			formErrors.username = 'Please enter a username.';
 		}
 
 		if (!userValues.email) {
@@ -37,8 +37,8 @@ export default function SignUpPage() {
 	const handleSubmit = async(e) => {
 		e.preventDefault();
 		if (validateForm()) {
-			// name, lastname, userValuesname, email, password
-			await signUp(userValues.name, userValues.lastName, userValues.userValuesname, userValues.email, userValues.password)
+			// name, lastname, username, email, password
+			await signUp(userValues.name, userValues.lastName, userValues.username, userValues.email, userValues.password)
 		}
 	};
 
@@ -50,47 +50,47 @@ export default function SignUpPage() {
 
 
 		<form onSubmit={handleSubmit} style={styles.form}>
-			<label htmlFor="name">Name:</label>
+			<label htmlFor="signup-name">Name:</label>
 			<input
 				type="text"
-				id="name"
+				id="signup-name"
 				value={userValues.name}
 				onChange={(e) => setUserValues({...userValues, name: e.target.value})}
 			/>
-			{errors.name && <p className="error">{errors.name}</p>}
-			<label htmlFor="lastName">Last name:</label>
+			{errors.name && <p className="signup-error">{errors.name}</p>}
+			<label htmlFor="signup-lastName">Last name:</label>
 			<input
 				type="text"
-				id="lastName"
+				id="signup-lastName"
 				value={userValues.lastName}
 				onChange={(e) => setUserValues({...userValues, lastName: e.target.value})}
 			/>
-			{errors.lastName && <p className="error">{errors.lastName}</p>}
-			<label htmlFor="userValuesname">Username:</label>
+			{errors.lastName && <p className="signup-error">{errors.lastName}</p>}
+			<label htmlFor="signup-username">Username:</label>
 			<input
 				type="text"
-				id="userValuesname"
-				value={userValues.userValuesname}
-				onChange={(e) => setUserValues({...userValues, userValuesname: e.target.value})}
+				id="signup-username"
+				value={userValues.username}
+				onChange={(e) => setUserValues({...userValues, username: e.target.value})}
 			/>
-			{errors.userValuesname && <p className="error">{errors.userValuesname}</p>}
-			<label htmlFor="email">Email:</label>
+			{errors.username && <p className="signup-error">{errors.username}</p>}
+			<label htmlFor="signup-email">Email:</label>
 			<input
 				type="email"
-				id="email"
+				id="signup-email"
 				value={userValues.email}
 				onChange={(e) => setUserValues({...userValues, email: e.target.value})}
 			/>
-			{errors.email && <p className="error">{errors.email}</p>}
-			<label htmlFor="password">Password:</label>
+			{errors.email && <p className="signup-error">{errors.email}</p>}
+			<label htmlFor="signup-password">Password:</label>
 			<input
 				type="password"
-				id="password"
+				id="signup-password"
 				value={userValues.password}
 				onChange={(e) => setUserValues({...userValues, password: e.target.value})}
 			/>
-			{errors.password && <p className="error">{errors.password}</p>}
-			<button type="submit">Sign Up</button>
+			{errors.password && <p className="signup-error">{errors.password}</p>}
+			<button type="submit" id="signup-submit-button">Sign Up</button>
 		</form>
 		</div>
 		</div>

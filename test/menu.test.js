@@ -70,8 +70,7 @@ describe("Menu", async function () {
 	});
 
 
-
-			after(function () {
+	after(function () {
 		// End of test use this.
 		browser.quit();
 	});
